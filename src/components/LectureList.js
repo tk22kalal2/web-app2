@@ -5,9 +5,9 @@ export class LectureList {
 
   async loadLectures(platform, subject) {
     try {
-      // Get the base URL for the current environment
-      const baseUrl = window.location.pathname.includes('github.io') 
-        ? `${window.location.pathname}/src/platforms`
+      // Get the base URL for GitHub Pages
+      const baseUrl = window.location.hostname === 'tk22kalal2.github.io' 
+        ? '/web-app2/src/platforms'
         : '/src/platforms';
       
       const response = await fetch(`${baseUrl}/${platform}/subjects/${subject.toLowerCase()}.json`);
