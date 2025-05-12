@@ -5,7 +5,12 @@ export class LectureList {
 
   async loadLectures(platform, subject) {
     try {
-      const response = await fetch(`/src/platforms/${platform}/subjects/${subject.toLowerCase()}.json`);
+      // Get the base URL for the current environment
+      const baseUrl = window.location.pathname.includes('github.io') 
+        ? `${window.location.pathname}/src/platforms`
+        : '/src/platforms';
+      
+      const response = await fetch(`${baseUrl}/${platform}/subjects/${subject.toLowerCase()}.json`);
       const data = await response.json();
       this.currentLectures = data.lectures;
       return data.lectures;
@@ -97,7 +102,7 @@ export class LectureList {
     const container = document.createElement('div');
     container.className = 'lecture-list';
 
-    if (this.currentLectures.length === 0) {
+    if (!this.currentLectures || this.currentLectures.length === 0) {
       const message = document.createElement('p');
       message.textContent = 'No lectures available';
       container.appendChild(message);
