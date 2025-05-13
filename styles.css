@@ -250,7 +250,7 @@ main {
 .video-popup-content {
   background: #fff;
   border-radius: 20px;
-  width: 50%;               /* Decreased from 90% */
+  width: 80%;               /* Decreased from 90% */
   max-width: 600px;         /* Decreased from 1000px */
   position: relative;
   padding: 1rem 1.5rem;     /* Reduced padding */
@@ -293,8 +293,8 @@ main {
 
 .iframe-container {
   position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;        /* Maintain proper video ratio */
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
