@@ -250,7 +250,7 @@ main {
 .video-popup-content {
   background: #fff;
   border-radius: 20px;
-  width: 80%;               /* Decreased from 90% */
+  width: 50%;               /* Decreased from 90% */
   max-width: 600px;         /* Decreased from 1000px */
   position: relative;
   padding: 1rem 1.5rem;     /* Reduced padding */
