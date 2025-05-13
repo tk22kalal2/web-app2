@@ -231,6 +231,104 @@ main {
   color: #2c5282;
 }
 
+/* Video Popup Styles */
+.video-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.video-popup-content {
+  background: #fff;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1000px;
+  position: relative;
+  padding: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.4s ease-out;
+}
+
+.close-popup {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e53e3e;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.close-popup:hover {
+  background: #c53030;
+  transform: scale(1.1);
+}
+
+.video-title {
+  color: #2d3748;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.iframe-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .platform-selector {
     grid-template-columns: 1fr;
@@ -254,5 +352,23 @@ main {
   .stream-button, .download-button {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+  }
+
+  .video-popup-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .video-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .close-popup {
+    top: -12px;
+    right: -12px;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
   }
 }
