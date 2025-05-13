@@ -158,12 +158,16 @@ main {
   margin: 0;
   color: #2d3748;
   font-size: 1.1rem;
+  flex: 1;
 }
 
-.lecture-card button {
+.button-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.stream-button, .download-button {
   padding: 0.75rem 1.5rem;
-  background: #2c5282;
-  color: white;
   border: none;
   border-radius: 25px;
   cursor: pointer;
@@ -174,9 +178,26 @@ main {
   gap: 0.5rem;
 }
 
-.lecture-card button:hover {
-  background: #1a365d;
+.stream-button {
+  background: #2c5282;
+  color: white;
+}
+
+.download-button {
+  background: #4a5568;
+  color: white;
+}
+
+.stream-button:hover, .download-button:hover {
   transform: scale(1.05);
+}
+
+.stream-button:hover {
+  background: #1a365d;
+}
+
+.download-button:hover {
+  background: #2d3748;
 }
 
 .bottom-nav {
@@ -217,5 +238,21 @@ main {
   
   .subject-list {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
+  .lecture-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .button-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .stream-button, .download-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
   }
 }
