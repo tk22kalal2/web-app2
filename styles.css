@@ -296,7 +296,7 @@ main {
   width: 100%;
   aspect-ratio: 16 / 9;        /* Maintain proper video ratio */
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 6px;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
